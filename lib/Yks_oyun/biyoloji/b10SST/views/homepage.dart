@@ -3,6 +3,8 @@ import 'package:yksoyun_23_06_2022/Yks_oyun/biyoloji/b10SST/views/play_quiz.dart
 import 'package:yksoyun_23_06_2022/customText.dart';
 
 class Bt10TFHomePage extends StatefulWidget {
+  const Bt10TFHomePage({super.key});
+
   @override
   _Bt10TFHomePageState createState() => _Bt10TFHomePageState();
 }

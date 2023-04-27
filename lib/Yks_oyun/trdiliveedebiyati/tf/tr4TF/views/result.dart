@@ -83,28 +83,28 @@ class _TrvEde4ResultState extends State<TrvEde4Result> {
             ),
             const SizedBox(height: 25),
             const SizedBox(height: 30),
-            GestureDetector(
-              onTap: () {
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize:
+                      Size(MediaQuery.of(context).size.width * 0.5, 50),
+                  backgroundColor: Colors.white,
+                  side: const BorderSide(color: Colors.blue, width: 2),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25))),
+              onPressed: () {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const TrvEde4HomePage()));
               },
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 54),
-                child: const Text(
-                  "Yeniden",
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600),
-                ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(color: Colors.blue, width: 2)),
+              child: const Text(
+                'Yeniden',
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600),
               ),
-            ),
+            )
           ],
         ),
       ),

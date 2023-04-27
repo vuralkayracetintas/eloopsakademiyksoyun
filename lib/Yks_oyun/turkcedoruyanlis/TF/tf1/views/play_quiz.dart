@@ -191,72 +191,73 @@ class _TrPlayQuizState extends State<TrPlayQuiz>
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Expanded(
-                      child: GestureDetector(
-                    onTap: () {
-                      if (questions[index].getAnswer() == "True") {
-                        setState(() {
-                          points = points + 10;
-                          nextQuestion();
-                          correct++;
-                        });
-                      } else {
-                        setState(() {
-                          points = points - 5;
-                          nextQuestion();
-                          incorrect++;
-                        });
-                      }
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      decoration: BoxDecoration(
-                          color: Colors.lightBlue,
-                          borderRadius: BorderRadius.circular(24)),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(110, 45),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          )),
+                      onPressed: () {
+                        if (questions[index].getAnswer() == "True") {
+                          setState(() {
+                            points = points + 10;
+                            nextQuestion();
+                            correct++;
+                          });
+                        } else {
+                          setState(() {
+                            points = points - 5;
+                            nextQuestion();
+                            incorrect++;
+                          });
+                        }
+                      },
                       child: const Text(
-                        "Doğru",
+                        'True',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w400),
-                        textAlign: TextAlign.center,
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
-                  )),
+                  ),
                   const SizedBox(
                     width: 20,
                   ),
                   Expanded(
-                      child: GestureDetector(
-                    onTap: () {
-                      if (questions[index].getAnswer() == "False") {
-                        setState(() {
-                          points = points + 10;
-                          nextQuestion();
-                          correct++;
-                        });
-                      } else {
-                        setState(() {
-                          points = points - 5;
-                          nextQuestion();
-                          incorrect++;
-                        });
-                      }
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.circular(24)),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          minimumSize: const Size(110, 45),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          )),
+                      onPressed: () {
+                        if (questions[index].getAnswer() == "False") {
+                          setState(() {
+                            points = points + 10;
+                            nextQuestion();
+                            correct++;
+                          });
+                        } else {
+                          setState(() {
+                            points = points - 5;
+                            nextQuestion();
+                            incorrect++;
+                          });
+                        }
+                      },
                       child: const Text(
-                        "Yanlış",
+                        'False',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w400),
-                        textAlign: TextAlign.center,
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
-                  )),
+                  ),
                 ],
               ),
             )

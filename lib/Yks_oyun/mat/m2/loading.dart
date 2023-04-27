@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:yksoyun_23_06_2022/Yks_oyun/mat/m2/views/homepage.dart';
 
-
 class SplashScreen22 extends StatefulWidget {
   const SplashScreen22({Key? key}) : super(key: key);
 
@@ -40,10 +39,13 @@ class _SplashScreen22State extends State<SplashScreen22> {
             const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurple),
             ),
-            const SizedBox(height: 200,),
+            const SizedBox(
+              height: 200,
+            ),
             const Text(
               "Yıllık Eğitim Maliyetini %70 İndir!",
-              style: TextStyle(fontWeight: FontWeight.w500,color: Colors.red,fontSize: 16),
+              style: TextStyle(
+                  fontWeight: FontWeight.w500, color: Colors.red, fontSize: 16),
             ),
           ],
         ),
@@ -51,6 +53,3 @@ class _SplashScreen22State extends State<SplashScreen22> {
     );
   }
 }
-
-
-

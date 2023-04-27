@@ -4,8 +4,7 @@ import 'package:yksoyun_23_06_2022/Yks_oyun/biyoloji/b1tf/views/homepage.dart';
 class Bt1TFResult extends StatefulWidget {
   int score, totalQuestion, correct, incorrect;
   Bt1TFResult({
- Key? key,
-
+    Key? key,
     required this.score,
     required this.totalQuestion,
     required this.correct,
@@ -82,28 +81,28 @@ class _Bt1TFResultState extends State<Bt1TFResult> {
                   fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 25),
-            GestureDetector(
-              onTap: () {
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  minimumSize:
+                      Size(MediaQuery.of(context).size.width * 0.5, 50),
+                  backgroundColor: Colors.white,
+                  side: const BorderSide(color: Colors.blue, width: 2),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25))),
+              onPressed: () {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const Bt1TFHomePage()));
               },
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 54),
-                child: const Text(
-                  "Yeniden",
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600),
-                ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(color: Colors.blue, width: 2)),
+              child: const Text(
+                'Yeniden',
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600),
               ),
-            ),
+            )
           ],
         ),
       ),

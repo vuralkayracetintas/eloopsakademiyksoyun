@@ -48,7 +48,7 @@ class myAdFunction {
           createInterstitialAd();
         },
       );
-      interstitialAd!.show();
+      interstitialAd?.show();
     }
   }
 }

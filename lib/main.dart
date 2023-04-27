@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'package:yksoyun_23_06_2022/Yks_oyun/oyun/loading.dart';
 import 'package:yksoyun_23_06_2022/google_admob/ad_function.dart';
 import 'package:yksoyun_23_06_2022/main_splash.dart';
