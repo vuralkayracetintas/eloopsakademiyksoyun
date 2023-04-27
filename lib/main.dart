@@ -96,8 +96,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    _bottomBannerAd!.dispose();
-    interstitialAd!.dispose();
+    _bottomBannerAd?.dispose();
+    interstitialAd?.dispose();
     super.dispose();
   }
 
