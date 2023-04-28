@@ -797,7 +797,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
-//todo reklam kodlarini duzenle 
