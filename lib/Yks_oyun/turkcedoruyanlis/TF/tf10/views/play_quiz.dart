@@ -211,7 +211,7 @@ class _Tr9PlayQuizState extends State<Tr9PlayQuiz>
                         }
                       },
                       child: const Text(
-                        'True',
+                        'Doğru',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -247,7 +247,7 @@ class _Tr9PlayQuizState extends State<Tr9PlayQuiz>
                         }
                       },
                       child: const Text(
-                        'False',
+                        'Yanlış',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,

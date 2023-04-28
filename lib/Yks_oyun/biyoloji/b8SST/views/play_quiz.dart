@@ -215,7 +215,7 @@ class _Bt8TFPlayQuizState extends State<Bt8TFPlayQuiz>
                         }
                       },
                       child: const Text(
-                        'True',
+                        'Doğru',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -251,7 +251,7 @@ class _Bt8TFPlayQuizState extends State<Bt8TFPlayQuiz>
                         }
                       },
                       child: const Text(
-                        'False',
+                        'Yanlış',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,

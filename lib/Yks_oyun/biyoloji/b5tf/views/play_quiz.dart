@@ -21,8 +21,7 @@ class _Bt5TFPlayQuizState extends State<Bt5TFPlayQuiz>
 
   late AnimationController controller;
 
-  late 
- Animation animation;
+  late Animation animation;
 
   double beginAnim = 0.0;
 
@@ -214,7 +213,7 @@ class _Bt5TFPlayQuizState extends State<Bt5TFPlayQuiz>
                         }
                       },
                       child: const Text(
-                        'True',
+                        'Doğru',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -250,7 +249,7 @@ class _Bt5TFPlayQuizState extends State<Bt5TFPlayQuiz>
                         }
                       },
                       child: const Text(
-                        'False',
+                        'Yanlış',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,

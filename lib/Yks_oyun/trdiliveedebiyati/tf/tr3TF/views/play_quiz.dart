@@ -212,7 +212,7 @@ class _TrvEde3PlayQuizState extends State<TrvEde3PlayQuiz>
                         }
                       },
                       child: const Text(
-                        'True',
+                        'Doğru',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -248,7 +248,7 @@ class _TrvEde3PlayQuizState extends State<TrvEde3PlayQuiz>
                         }
                       },
                       child: const Text(
-                        'False',
+                        'Yanlış',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,

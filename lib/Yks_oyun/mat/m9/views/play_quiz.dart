@@ -212,7 +212,7 @@ class _m9PlayQuizState extends State<m9PlayQuiz>
                         }
                       },
                       child: const Text(
-                        'True',
+                        'Doğru',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -248,7 +248,7 @@ class _m9PlayQuizState extends State<m9PlayQuiz>
                         }
                       },
                       child: const Text(
-                        'False',
+                        'Yanlış',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -260,7 +260,7 @@ class _m9PlayQuizState extends State<m9PlayQuiz>
                 ],
               ),
             ),
-            SizedBox(height: 50)
+            const SizedBox(height: 50)
           ],
         ),
       ),
