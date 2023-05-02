@@ -12,7 +12,7 @@ class _MainSplashState extends State<MainSplash> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 350), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     });
@@ -27,9 +27,13 @@ class _MainSplashState extends State<MainSplash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // logo here
-            Image.asset(
-              'assets/images/eloops_logo.png',
-              height: 120,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                'assets/images/eloops_logo.png',
+                height: MediaQuery.of(context).size.height * 0.5,
+                width: MediaQuery.of(context).size.width,
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -40,11 +44,11 @@ class _MainSplashState extends State<MainSplash> {
             const SizedBox(
               height: 200,
             ),
-            const Text(
-              "Yıllık Eğitim Maliyetini %70 İndir!",
-              style: TextStyle(
-                  fontWeight: FontWeight.w500, color: Colors.red, fontSize: 16),
-            ),
+            // const Text(
+            //   "Yıllık Eğitim Maliyetini %70 İndir!",
+            //   style: TextStyle(
+            //       fontWeight: FontWeight.w500, color: Colors.red, fontSize: 16),
+            // ),
           ],
         ),
       ),

@@ -86,12 +86,18 @@ class _HomeScreenState extends State<HomeScreen> {
   final service = FirebaseNotificationService();
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
+  double opacityLevel = 0;
   @override
   void initState() {
     _createBottomBannerAd();
     myAdFunction.createInterstitialAd();
     service.connectionNotification();
     super.initState();
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {
+        opacityLevel = 1;
+      });
+    });
   }
 
   @override
@@ -292,507 +298,526 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Stack(
-        children: <Widget>[
-          SafeArea(
-              child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const <Widget>[
-                  Image(
-                    image: AssetImage("assets/images/ogrenci1.png"),
-                  ),
-                ]),
-          )),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+      body: AnimatedOpacity(
+        duration: const Duration(milliseconds: 1000),
+        opacity: opacityLevel,
+        child: Stack(
+          children: <Widget>[
+            SafeArea(
+                child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  const SizedBox(height: 20),
-
-                  //Kampanya Birimi Ust Bar
-
-                  Text(
-                    "Okul Eğitimi Odaklı",
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: Colors.deepPurple,
-                        fontSize: 20),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: const <Widget>[
-                      Text(
-                        "Video",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.red),
-                      ),
-                      Text(
-                        " İçerik Platformu",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
-                  ),
-
-                  Row(children: const <Widget>[
-                    Expanded(child: Divider()),
-                    Expanded(child: Divider()),
-                  ]),
-                  const SizedBox(height: 55),
-                  Text(
-                    "Dilediğin Eğitim Kurumundan",
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: Colors.deepPurple,
-                        fontSize: 20),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "Dilediğin Eğitime Ulaş",
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: Colors.deepPurple,
-                        fontSize: 20),
-                  ),
-                  const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      '#premiumhisset',
-                      style: TextStyle(color: Colors.grey),
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const <Widget>[
+                    Image(
+                      image: AssetImage("assets/images/ogrenci1.png"),
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  Expanded(
-                    child: GridView.count(
-                        crossAxisCount: 2,
-                        childAspectRatio: .85,
-                        crossAxisSpacing: .1,
-                        mainAxisSpacing: 20,
-                        children: <Widget>[
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () => setState(() {
-                              _launched = _launchInBrowser(toLaunch);
-                            }),
+                  ]),
+            )),
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const SizedBox(height: 20),
 
-                            child: Container(
-                              width: 200, height: 280,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
+                    //Kampanya Birimi Ust Bar
 
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image: AssetImage("assets/gorsel/a.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "Dijital Platform\n- WEB -",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
+                    Text(
+                      "Okul Eğitimi Odaklı",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(
+                              fontWeight: FontWeight.w800,
+                              color: Colors.deepPurple,
+                              fontSize: 20),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: const <Widget>[
+                        Text(
+                          "Video",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.red),
+                        ),
+                        Text(
+                          " İçerik Platformu",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.deepPurple,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                      ],
+                    ),
+
+                    Row(children: const <Widget>[
+                      Expanded(child: Divider()),
+                      Expanded(child: Divider()),
+                    ]),
+                    const SizedBox(height: 55),
+                    Text(
+                      "Dilediğin Eğitim Kurumundan",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(
+                              fontWeight: FontWeight.w800,
+                              color: Colors.deepPurple,
+                              fontSize: 20),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Dilediğin Eğitime Ulaş",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(
+                              fontWeight: FontWeight.w800,
+                              color: Colors.deepPurple,
+                              fontSize: 20),
+                    ),
+                    const Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        '#premiumhisset',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Expanded(
+                      child: GridView.count(
+                          crossAxisCount: 2,
+                          childAspectRatio: .85,
+                          crossAxisSpacing: .1,
+                          mainAxisSpacing: 20,
+                          children: <Widget>[
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () => setState(() {
+                                _launched = _launchInBrowser(toLaunch);
+                              }),
+
+                              child: Container(
+                                width: 200, height: 280,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
+
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image: AssetImage("assets/gorsel/a.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Dijital Platform\n- WEB -",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () => setState(() {
-                              _launchede = _launchInBrowser(toLaunche);
-                            }),
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () => setState(() {
+                                _launchede = _launchInBrowser(toLaunche);
+                              }),
 
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
 
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image: AssetImage("assets/gorsel/abc.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "Online TYT-AYT Denemeler",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () {
-                              myAdFunction.showInterstitialAd();
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const biyoloji()));
-                            },
-
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
-
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image: AssetImage("assets/gorsel/ab.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "Biyoloji Hızlı Testler",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image:
+                                          AssetImage("assets/gorsel/abc.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Online TYT-AYT Denemeler",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () {
-                              myAdFunction.showInterstitialAd();
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const matematik()));
-                            },
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () {
+                                myAdFunction.showInterstitialAd();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const biyoloji()));
+                              },
 
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
 
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image:
-                                        AssetImage("assets/gorsel/abcdea.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "Matematik Hızlı Testler",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              myAdFunction.showInterstitialAd();
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const DetailsScreen2()));
-                            },
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(10),
-
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image: AssetImage("assets/gorsel/abcd.png"),
-                                    height: 90,
-                                    width: 150,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "Türkçe Hızlı Testler",
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image: AssetImage("assets/gorsel/ab.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Biyoloji Hızlı Testler",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () {
-                              myAdFunction.showInterstitialAd();
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const turkdilivedebiyati()));
-                            },
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () {
+                                myAdFunction.showInterstitialAd();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const matematik()));
+                              },
 
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
 
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image:
-                                        AssetImage("assets/gorsel/abcde.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "Türk Dili ve Edebiyetı Hızlı Testler",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () {
-                              myAdFunction.showInterstitialAd();
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const cografya()));
-                            },
-
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
-
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image:
-                                        AssetImage("assets/gorsel/abcdea.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "Coğrafya Hızlı Testler",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image: AssetImage(
+                                          "assets/gorsel/abcdea.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Matematik Hızlı Testler",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () {
-                              myAdFunction.showInterstitialAd();
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const ingilizce()));
-                            },
+                            GestureDetector(
+                              onTap: () {
+                                myAdFunction.showInterstitialAd();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const DetailsScreen2()));
+                              },
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(10),
 
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
-
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image: AssetImage("assets/gorsel/a.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "İngilizce Hızlı Testler",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            //Buton :) web
-                            onTap: () {
-                              myAdFunction.showInterstitialAd();
-
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SplashScreenoyun()));
-                            },
-
-                            child: Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(25),
-                                color: Colors.white,
-                              ),
-                              margin: const EdgeInsets.all(8),
-
-                              //Margin, komşular arası
-                              //Padding kendi içi
-                              // padding: EdgeInsets.all(25),
-                              child: Column(
-                                children: const [
-                                  Spacer(),
-                                  Image(
-                                    image: AssetImage("assets/gorsel/ab.png"),
-                                    height: 90,
-                                    width: 120,
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    "OYUN",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.deepPurple),
-                                  ),
-                                  Spacer(),
-                                ],
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image:
+                                          AssetImage("assets/gorsel/abcd.png"),
+                                      height: 90,
+                                      width: 150,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Türkçe Hızlı Testler",
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ]),
-                  ),
-                  const SizedBox(
-                    height: 0.5,
-                  )
-                ],
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () {
+                                myAdFunction.showInterstitialAd();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const turkdilivedebiyati()));
+                              },
+
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
+
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image:
+                                          AssetImage("assets/gorsel/abcde.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Türk Dili ve Edebiyetı Hızlı Testler",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () {
+                                myAdFunction.showInterstitialAd();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const cografya()));
+                              },
+
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
+
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image: AssetImage(
+                                          "assets/gorsel/abcdea.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Coğrafya Hızlı Testler",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () {
+                                myAdFunction.showInterstitialAd();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ingilizce()));
+                              },
+
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
+
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image: AssetImage("assets/gorsel/a.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "İngilizce Hızlı Testler",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              //Buton :) web
+                              onTap: () {
+                                myAdFunction.showInterstitialAd();
+
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SplashScreenoyun()));
+                              },
+
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadiusDirectional.circular(25),
+                                  color: Colors.white,
+                                ),
+                                margin: const EdgeInsets.all(8),
+
+                                //Margin, komşular arası
+                                //Padding kendi içi
+                                // padding: EdgeInsets.all(25),
+                                child: Column(
+                                  children: const [
+                                    Spacer(),
+                                    Image(
+                                      image: AssetImage("assets/gorsel/ab.png"),
+                                      height: 90,
+                                      width: 120,
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "OYUN",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.deepPurple),
+                                    ),
+                                    Spacer(),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ]),
+                    ),
+                    const SizedBox(
+                      height: 0.5,
+                    )
+                  ],
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
