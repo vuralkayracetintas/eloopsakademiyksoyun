@@ -48,17 +48,17 @@
 </div>
 
 
-## Dersler
+## İçerik
 
-- Kimya TYT AYT
 - Biyoloji TYT AYT
-- Fizik TYT AYT
-- Coğrafya TYT AYT
-- Tarih TYT AYT
-- Felsefe TYT AYT
 - Matematik TYT AYT
+- Kimya TYT AYT
 - Türkçe TYT
 - Türk Dili ve Edebiyatı AYT
+- Coğrafya TYT AYT
+- Ingilizce
+- OYUN
+
 
 ## Bildirimler
 
