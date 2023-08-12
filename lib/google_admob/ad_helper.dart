@@ -3,9 +3,9 @@ import 'dart:io';
 class AdHelper {
   static String get bannerAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-2445169075279341/9628675838';
+      return '';
     } else if (Platform.isIOS) {
-      return 'ca-app-pub-2445169075279341/2217289675';
+      return '';
     } else {
       throw UnsupportedError('Unsupported platform');
     }
@@ -13,9 +13,9 @@ class AdHelper {
 
   static String get interstitialAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-2445169075279341/4428320044';
+      return '';
     } else if (Platform.isIOS) {
-      return 'ca-app-pub-2445169075279341/7998925934';
+      return '';
     } else {
       throw UnsupportedError('Unsupported platform');
     }
