@@ -8,7 +8,6 @@
 
 - Türkçe YKS, Matematik YKS, Coğrafya YKS, Fizik YKS, Kimya YKS, Biyoloji YKS derslerine oyunla hazırlık yapın.
 - TYT ve AYT sorularıyla kapsamlı denemeler yapma imkanı.
-- Öğrenci ilerlemesini izlemek için kişisel istatistikler ve başarı takibi.
 - Derslerinizi daha eğlenceli hale getirerek sınav hazırlığınızı destekleyin.
 - Bildirimlerle sınav tarihleri, etkinlikler ve güncellemeler hakkında bilgi alın.
 
