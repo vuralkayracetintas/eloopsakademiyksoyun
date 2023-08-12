@@ -2,7 +2,7 @@
 
 <img src="screenshots/1024.png" alt="Uygulama Logo" width="300" />
 
-- [Google Play](https://docs.flutter.dev/get-started/codelab)
+- [Google Play](https://play.google.com/store/apps/details?id=com.Global.TRGame.YKSOYUN)
 - [AppStore](https://apps.apple.com/tr/app/yks-oyun/id1591221561)
 - [E-LooPsAkademi WEB](https://www.eloopsakademi.com/)
 
