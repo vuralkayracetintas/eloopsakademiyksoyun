@@ -19,6 +19,8 @@
 
 
 assets/
+android/
+ios/
 
 
 
@@ -43,8 +45,7 @@ assets/
 /ios/
 /.metadata/
 /pubspec.lock/
-#files
-/assets
+
 
 # Web related
 lib/generated_plugin_registrant.dart
