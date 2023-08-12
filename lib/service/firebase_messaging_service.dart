@@ -42,8 +42,8 @@ class FirebaseNotificationService {
       if (message.notification != null) {
         print(
             'messege also contained a notification : ${message.notification}');
-        print('Gelen bildirim basligi ${message.notification!.title}');
-        print('message title ${message.notification!.body}');
+        print('message title ${message.notification!.title}');
+        print('message body ${message.notification!.body}');
         LocalNotificationServices.createNotification(message);
       }
     });
