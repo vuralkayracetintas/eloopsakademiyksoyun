@@ -1,6 +1,13 @@
 # YKS Oyun
 
-![Uygulama Logo](uygulama_logo.png)
+<img src="screenshots/1024.png" alt="Uygulama Logo" width="300" />
+
+- [Google Play](https://docs.flutter.dev/get-started/codelab)
+- [AppStore](https://apps.apple.com/tr/app/yks-oyun/id1591221561)
+- [E-LooPsAkademi WEB](https://www.eloopsakademi.com/)
+
+
+
 
 "YKS Oyun," Yükseköğretim Kurumları Sınavı'na (YKS) interaktif bir yaklaşımla hazırlanmak isteyen öğrencilere yönelik eğitim ve eğlence bir araya getiren bir mobil uygulamadır.
 
@@ -14,35 +21,32 @@
 ## Ekran Görüntüleri
 
 <div style="display: flex; justify-content: center;">
-  <div style="flex: 1; margin-right: 10px;">
-    <img src="screenshots/1.png" alt="Ana Ekran" width="300" />
-    <img src="screenshots/2.png" alt="Ana Ekran" width="300" />
-     <img src="screenshots/3.png" alt="Ana Ekran" width="300" />
-    <!-- <p style="text-align: center;">Splash, Home</p> -->
+  <div style="display: flex; flex-direction: column; margin-right: 10px;">
+    <img src="screenshots/1.png" alt="Resim 1" width="300" />
+    <img src="screenshots/2.png" alt="Resim 2" width="300" />
   </div>
-  <div style="flex: 1; margin-left: 10px;">
-    <div>
-      <img src="screenshots/4.png" alt="Detay Sayfası" width="300"/>
-      <img src="screenshots/5.png" alt="Detay Sayfası" width="300"/>
-      <img src="screenshots/6.png" alt="Detay Sayfası" width="300"/>
-      <!-- <p style="text-align: center;">Home</p> -->
-    </div>
-     <div style="flex: 1; margin-left: 10px;">
-    <div>
-      <img src="screenshots/7.png" alt="Detay Sayfası" width="300"/>
-      <img src="screenshots/8.png" alt="Detay Sayfası" width="300"/>
-      <img src="screenshots/9.png" alt="Detay Sayfası" width="300"/>
-      <!-- <p style="text-align: center;">Home</p> -->
-    </div>
-     <div style="flex: 1; margin-left: 10px;">
-    <div>
-      <img src="screenshots/10.png" alt="Detay Sayfası" width="300"/>
-      <img src="screenshots/11.png" alt="Detay Sayfası" width="300"/>
-      <img src="screenshots/12.png" alt="Detay Sayfası" width="300"/>
-      <!-- <p style="text-align: center;">Home</p> -->
-    </div>
+  <div style="display: flex; flex-direction: column; margin-left: 10px;">
+    <img src="screenshots/3.png" alt="Resim 3" width="300" />
+    <img src="screenshots/4.png" alt="Resim 4" width="300" />
+  </div>
+  <div style="display: flex; flex-direction: column; margin-right: 10px;">
+    <img src="screenshots/5.png" alt="Resim 5" width="300" />
+    <img src="screenshots/6.png" alt="Resim 6" width="300" />
+  </div>
+  <div style="display: flex; flex-direction: column; margin-left: 10px;">
+    <img src="screenshots/7.png" alt="Resim 7" width="300" />
+    <img src="screenshots/8.png" alt="Resim 8" width="300" />
+  </div>
+  <div style="display: flex; flex-direction: column; margin-right: 10px;">
+    <img src="screenshots/9.png" alt="Resim 9" width="300" />
+    <img src="screenshots/10.png" alt="Resim 10" width="300" />
+  </div>
+  <div style="display: flex; flex-direction: column; margin-left: 10px;">
+    <img src="screenshots/11.png" alt="Resim 11" width="300" />
+    <img src="screenshots/12.png" alt="Resim 12" width="300" />
   </div>
 </div>
+
 
 ## Dersler
 
@@ -58,14 +62,5 @@
 
 ## Bildirimler
 
-Uygulama, önemli sınav tarihleri, etkinlikler ve güncellemeler hakkında bildirimler gönderebilir. Bildirimleri almak için uygulamanın bildirim izinlerini etkinleştirmeniz gerekmektedir.
+Uygulama, önemli sınav tarihleri, etkinlikler ve güncellemeler hakkında bildirimleri almak için uygulamanın bildirim izinlerini etkinleştirmeniz gerekmektedir.
 
-## Başlamak İçin
-
-1. **Dart ve Flutter'ın Yüklü Olduğundan Emin Olun:** Eğer yüklü değilse, [Dart](https://dart.dev/get-dart) ve [Flutter](https://flutter.dev/docs/get-started/install)’ı yükleyin.
-
-2. **Depoyu Klonlayın:** Bu depoyu kendi hesabınıza çatallayarak veya direkt olarak klonlayarak başlayabilirsiniz.
-
-   ```sh
-   git clone https://github.com/KULLANICIADI/YKS-OYUN.git
-   ```
